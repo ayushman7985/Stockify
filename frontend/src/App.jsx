@@ -6,6 +6,8 @@ import OrderManager from './components/OrderManager'
 import ProductManager from './components/ProductManager'
 import './App.css'
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+
 const tabs = [
   { id: 'dashboard', label: 'Dashboard' },
   { id: 'products', label: 'Products' },
@@ -26,7 +28,7 @@ function AppContent() {
             Manage products, customers, and orders with a persistent PostgreSQL database.
           </p>
         </div>
-        <a className="docs-link" href="http://localhost:8000/docs" target="_blank" rel="noreferrer">
+        <a className="docs-link" href={`${API_URL}/docs`} target="_blank" rel="noreferrer">
           API Docs
         </a>
       </header>
